@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: sentryflux-engine
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 9090
+
+---
+# Local Development Profile
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://database:5432/enginedb
+    username: admin
+    password: admin
+
+---
+# Production Cloud Profile
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: ${PROD_DB_URL}
+    username: ${PROD_DB_USER}
+    password: ${PROD_DB_PASS}
