@@ -16,7 +16,7 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:postgresql://database:5432/enginedb
+    url: jdbc:postgresql://postgres-service:5432/enginedb
     username: admin
     password: admin
 
